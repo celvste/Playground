@@ -1,0 +1,23 @@
+.disclaimer-page{
+  margin-top:160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.disclaimer-heading{
+  font-family:oliver;
+  font-size:25px;
+}
+
+.disclaimer-content{
+  margin-top:18px;
+  text-align: justify;
+  width:80%;
+  font-size:14px;
+}
+
+.list{
+  color:rgb(99, 99, 220);
+}

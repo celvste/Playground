@@ -1,0 +1,359 @@
+.map-page{
+  width:90%;
+}
+
+.map-intro{
+  height:20px;
+  margin-top: 150px;
+  font-size:14px;
+  font-family: oliver;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map-page-top{
+  display: flex;
+  flex-direction: row;
+  margin-top:5px;
+  align-items: flex-start;
+  justify-content: space-evenly;
+
+}
+
+.map-categories{
+  display:flex;
+  flex-direction: column;
+  margin-top: 20px;
+  font-family: oliver;
+  color:#0c0d43;
+  width:150px;
+  justify-content: center;
+  align-items: center;
+}
+
+.map-categories-buttons{
+  border:none;
+  font-family:oliver;
+  margin-top: 20px;
+  font-size:17px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.origins-regions-shown{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  width: 100%;
+  margin-top:10px;
+  gap:10px;
+}
+
+.region-button{
+  font-family: oliver;
+  background-color: transparent;
+  border:none;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.region-button:hover{
+  color:#F58058;
+}
+
+.selected-region{
+  color:#F58058;
+}
+
+.map-div{
+  position: relative;
+  max-width: 900px;
+  min-width: 100px;
+  width: 100%;
+}
+
+.map-img{
+  width: 100%;
+  height: auto; /* maintain the aspect ratio */
+}
+
+.map-room{
+  position: absolute;
+  cursor: pointer;
+  font-family: oliver;
+  z-index: 10;
+  color:#297550;
+  width:50px;
+  text-align: center;
+  display: flex;
+  font-size:2vw;
+}
+
+.map-room:hover{
+  opacity:70%;
+  transition-duration: 0.3s;
+}
+
+.room-1{
+  top:21%;
+  left:26.5%;
+}
+
+.room-2{
+  top:21%;
+  left:63%;
+}
+
+.room-3{
+  top:67%;
+  left:63%;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #297550;
+  border: 1px solid #ccc;
+  border-radius:15px;
+  z-index: 100;
+  opacity:90%;
+}
+
+.room-header{
+  font-family: oliver;
+  color:#ffffff;
+  font-size: 19px;
+}
+
+.room-description{
+  font-size:14px;
+  background-color:white;
+  color:black;
+  padding:10px;
+  border-radius: 10px;
+  margin-bottom:8px;
+}
+
+.popup.active {
+  display: block;
+}
+
+.popup-close {
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-family: oliver;
+  font-size:19px;
+  color:#e7e7e7;
+}
+
+.popup-close:hover{
+  opacity: 70%;
+  transition-duration: 0.3s;
+}
+
+.map-item-button{
+  border:none;
+  background-color: transparent;
+  position: absolute;
+  cursor: pointer;
+  padding:0;
+  font-family: oliver;
+}
+
+.map-item-button img{
+  height:auto;
+  width:100%;
+  display: block;
+}
+
+.map-item-button img:hover{
+  opacity:50%;
+  transition-duration: 0.3s;
+}
+
+.ludo{
+  top:2%;
+  left:17%;
+  width:10%
+}
+
+.pick-up-sticks{
+  top:5.5%;
+  left:26.5%;
+  width:13%
+}
+
+.gasing{
+  top:6.5%;
+  left:36.5%;
+  width:12%;
+}
+
+.five-stones{
+  top:35%;
+  left:33%;
+  width:10%;
+}
+
+.chapteh{
+  top:31%;
+  left:20%;
+  width:8%
+}
+
+.lego{
+  top:5%;
+  left:52%;
+  width:13%
+}
+
+.nerf-guns{
+  top:4%;
+  left:62%;
+  width:14%
+}
+
+.sylvanian-families{
+  top:6%;
+  left:72%;
+  width:14%
+}
+
+.game-boy{
+  top:19.5%;
+  left:71%;
+  width:15%;
+}
+
+.tamagotchi{
+  top:33%;
+  left:71%;
+  width:15%;
+}
+
+.pokemon-trading-card-game{
+  top:33%;
+  left:51%;
+  width:14%;
+}
+
+.pop-mart{
+  top:53.5%;
+  left:53%;
+  width:12%;
+}
+
+.minecraft{
+  top:53.5%;
+  left:72%;
+  width:13%;
+}
+
+.fortnite{
+  top:75%;
+  left:75%;
+  width:10%;
+}
+
+.nintendo-switch{
+  top:79%;
+  left:53%;
+  width:14%;
+}
+
+.comprehension-label{
+  font-size:14px;
+}
+
+.comprehension-select{
+  font-family:oliver;
+  border:none;
+  font-size:14px;
+}
+
+.map-item-content{
+  font-size:14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.map-item-img{
+  width: 200px; 
+  height: auto;
+  flex-shrink: 0;
+}
+
+.item-label{
+  margin-top:10px;
+  z-index: 100;
+  font-family: oliver;
+  font-size:20px;
+  color:#F58058;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+#content div {
+  display: none; /* Hide all content divs by default */
+}
+
+#content p {
+  display: none; /* Hide all paragraphs by default */
+}
+
+#content p.active {
+  display: block; /* Show only the active paragraph */
+}
+
+.map-items-nav{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:10px;
+}
+
+.map-items-next{
+  border:none;
+  background-color: #297550;
+  color:white;
+  font-family: oliver;
+  margin-bottom: 10px;
+  font-size:15px;
+  cursor: pointer;
+  padding:8px 15px;
+  border-radius: 18px;
+}
+
+.map-items-next:hover{
+  opacity:50%;
+  transition-duration: 0.6s;
+}
+
+.map-items-button{
+  border:none;
+  background-color: #297550;
+  color:white;
+  font-family: oliver;
+  margin-bottom: 10px;
+  font-size:15px;
+  cursor: pointer;
+  padding:8px 15px;
+  border-radius: 18px;
+}
+
+.map-items-button:hover{
+  opacity:50%;
+  transition-duration: 0.6s;
+}

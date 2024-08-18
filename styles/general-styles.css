@@ -1,0 +1,67 @@
+body {
+  font-family: nunito;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  flex-direction: column;
+  margin-bottom:70px;
+}
+
+.page-header{
+  justify-content: center;
+  position:fixed;
+  top:0px;
+  display:flex;
+  background-color: white;
+  height:140px;
+  width:100%;
+  z-index: 100;
+}
+
+.about-page-header{
+  left:8px;
+}
+
+.map-page-header{
+  left:8px;
+}
+
+.disclaimer-page-header{
+  left:8px;
+}
+
+.logo-div{
+  position:fixed;
+  top:25px;
+}
+
+.logo{
+  width:80px;
+  cursor: pointer;
+}
+
+.nav-bar{
+  width:300px;
+  position:fixed;
+  display: flex;
+  justify-content: space-between;
+  top: 100px;
+}
+
+.home-button, .map-button, .credits-button, .about-button {
+  font-family: oliver;
+  border:none;
+  background-color: transparent;
+  color:#F58058;
+  font-size:17px;
+  margin-left:8px;
+  margin-right:8px;
+  margin-bottom: 0px;
+  cursor: pointer;
+}
+
+.home-button:hover, .map-button:hover, .credits-button:hover, .about-button:hover{
+  color:#a34526;
+  transition-duration: 0.6s;
+}

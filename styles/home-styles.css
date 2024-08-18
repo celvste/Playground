@@ -1,0 +1,54 @@
+.welcome-page{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  padding: 10px;
+  margin-top:180px;
+}
+
+.heading{
+  font-size:18px;
+  text-align: center;
+  margin-top:10px;
+}
+
+.playground{
+  color:#F58058;
+  font-family: oliver;
+  font-size: 25px;
+}
+
+.heading-2{
+  font-size:18px;
+  text-align: center;
+  margin-top:-20px;
+}
+
+.description{
+  font-size:14px;
+  text-align: center;
+  margin-top:0px;
+  margin-left:30px;
+  margin-right:30px;
+}
+
+.step-in{
+  font-family: oliver;
+  border:none;
+  background-color: #297550;
+  color:white;
+  height:30px;
+  width:85px;
+  font-size: 15px;
+  margin-top: 15px;
+  cursor: pointer;
+  padding-top:4px;
+  border-radius: 18px;
+}
+
+.step-in:hover{
+  opacity:50%;
+  transition-duration: 0.6s;
+}
