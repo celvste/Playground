@@ -1,5 +1,6 @@
 .map-page{
   width:90%;
+  margin: 0 auto;
 }
 
 .map-intro{
@@ -16,7 +17,7 @@
 .map-page-top{
   display: flex;
   flex-direction: row;
-  margin-top:5px;
+  margin-top:10px;
   align-items: flex-start;
   justify-content: space-evenly;
 
@@ -36,7 +37,7 @@
 .map-categories-buttons{
   border:none;
   font-family:oliver;
-  margin-top: 20px;
+  padding-top: 20px;
   font-size:17px;
   cursor: pointer;
   background-color: transparent;
@@ -48,13 +49,13 @@
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  width: 100%;
   margin-top:10px;
   gap:10px;
 }
 
 .region-button{
   font-family: oliver;
+  color:black;
   background-color: transparent;
   border:none;
   justify-content: center;
@@ -73,13 +74,15 @@
 .map-div{
   position: relative;
   max-width: 900px;
-  min-width: 100px;
+  min-width: 430px;
   width: 100%;
+  left:-25px;
 }
 
 .map-img{
   width: 100%;
   height: auto; /* maintain the aspect ratio */
+  object-fit: cover;
 }
 
 .map-room{
@@ -357,4 +360,15 @@
 .map-items-button:hover{
   opacity:50%;
   transition-duration: 0.6s;
+}
+
+@media (max-width: 480px) {
+  .map-page{
+    display:flex;
+    flex-direction: column;
+  }
+
+  .map-div{
+    left:0px;
+  }
 }
