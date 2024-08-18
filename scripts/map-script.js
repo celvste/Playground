@@ -224,7 +224,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Origins button click handler
   originsButton.addEventListener('click', function () {
       // Change the button color to indicate selection
-      originsButton.style.color = "#F58058"; // Change to your desired color
+      originsButton.style.color = "#F58058"; // Change to selected color
       timelineButton.style.color = "black"; // Reset the other button color
 
       // Show regions
