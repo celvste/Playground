@@ -366,9 +366,29 @@
   .map-page-top{
     display:flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .map-div{
     left:0px;
+    width:400px;
+  }
+
+  .map-categories{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .origins-regions-shown{
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    justify-content: center;
+    align-items: center;
+    gap:15px;
+    width:80%;
   }
 }
