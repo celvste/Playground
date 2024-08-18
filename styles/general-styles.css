@@ -21,6 +21,7 @@ body {
   height:140px;
   width:100%;
   z-index: 100;
+  background-color: white;
 }
 
 .logo{
