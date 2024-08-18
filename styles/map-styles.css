@@ -363,7 +363,7 @@
 }
 
 @media (max-width: 480px) {
-  .map-page{
+  .map-page-top{
     display:flex;
     flex-direction: column;
   }
