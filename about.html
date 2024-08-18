@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="styles/general-styles.css">
+    <link rel="stylesheet" href="styles/about-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/oliver-2" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="page-header about-page-header">
+      <div class="logo-div"><img class="logo" src="imgs/dragon-playground.webp" onclick="navigateToHome()" alt="Dragon Playground Logo"></div>
+      <div class="nav-bar">
+        <button class="home-button" onclick="navigateToHome()">Home</button>
+        <button class="map-button" onclick="navigateToMap()">Map</button>
+        <button class="about-button" onclick="navigateToAbout()">About</button>
+        <button class="credits-button" onclick="navigateToDisclaimer()">Disclaimer</button>
+      </div>
+    </nav>
+    <main>
+      <div class="about-page"> 
+        <p class="about-page-heading">OUR PURPOSE</p>
+        <img src="imgs/mama-shop.jpg" class="about-page-img" alt="Mama Shop Image">
+        <p class="about-page-description">
+          My exhibition aims to preserve Singapore's rich heritage of play, evoking nostalgia while educating visitors about the shifts in society reflected in our toys. By curating a diverse collection of toys from different eras, my exhibition seeks to evoke a sense of nostalgia in older visitors while educating younger generations about the profound shifts in Singaporean society as reflected through these playthings.
+        </p>
+        <p class="about-page-heading">OUR LOGO</p>
+        <img src="imgs/dragon-playground-img.avif" class="about-page-img" alt="Dragon Playground Image">
+        <p class="about-page-description">
+          The Dragon Playground, with its timeless appeal and historical roots, embodies the evolution of play in Singapore's cultural landscape, making it an ideal emblem for my narrative. This not only pays homage to a beloved icon but also underscores my exhibition's commitment to preserving and celebrating the diverse history of play in Singapore.
+        </p>
+        <p class="about-page-heading">OUR MAP DOODLES</p>
+        <div class="slideshow-div"><img class="slideshow-img" id="slideshow" src="imgs/map/chapteh.png" alt="Slideshow Image"></div>
+        <p class="about-page-description">Images used for the map were all done by me, and were chosen to be drawn in a childlike style to invoke memories of childhood play for Singaporeans of all ages. The map itself was also hand-drawn. Hand-drawn elements evoke a sense of nostalgia and adds a unique, personal feel to my webpage. I hope to incorporate playful icons and elements that tell a story, guiding users through the content in an engaging, visual way.</p>
+        <p class="about-page-heading">OUR FONTS</p>
+        <p class="about-page-description"> <em>Nunito</em> is a well-balanced sans-serif font with rounded terminals, making it highly readable across various screen sizes and resolutions. Its rounded edges give it a soft, approachable feel, which felt appropriate for my website. On the other hand, <span class="oliver">Oliver</span> was chosen as it reminded me of a child's innocent scribbles on a page, overall contributing to the theme of my webpage.</p>
+      </div>
+    </main>
+    <script src="scripts/general-script.js"></script>
+    <script src="scripts/about-script.js"></script>
+  </body>
+</html>

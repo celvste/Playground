@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore!</title>
+    <link rel="stylesheet" href="styles/general-styles.css">
+    <link rel="stylesheet" href="styles/map-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/oliver-2" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="page-header map-page-header">
+      <div class="logo-div"><img class="logo" src="imgs/dragon-playground.webp" onclick="navigateToHome()" alt="Dragon Playground Logo"></div>
+      <div class="nav-bar">
+        <button class="home-button" onclick="navigateToHome()">Home</button>
+        <button class="map-button" onclick="navigateToMap()">Map</button>
+        <button class="about-button" onclick="navigateToAbout()">About</button>
+        <button class="credits-button" onclick="navigateToDisclaimer()">Disclaimer</button>
+      </div>
+    </nav>
+    <main class="map-page">
+      <div class="map-intro"><p>Navigate the <span style="color:#F58058">Playground</span> by timeline or origins, or click on each item to learn more!</p></div>
+      <div class="map-page-top">
+        <div class="map-categories">
+          <button id="timeline-button" class="map-categories-buttons">Timeline</button>
+          <button id="origins-button" class="map-categories-buttons">Origins</button>
+
+          <!-- hidden by default, shown when "Origins" is clicked -->
+          <div id="origins-regions" class="origins-regions" style="display: none;">
+            <div class="origins-regions-shown">
+              <button class="region-button" data-region="southeast-asia">Southeast Asia</button>
+              <button class="region-button" data-region="japan">Japan</button>
+              <button class="region-button" data-region="china">China</button>
+              <button class="region-button" data-region="india">India</button>
+              <button class="region-button" data-region="europe">Europe</button>
+              <button class="region-button" data-region="america">America</button>
+            </div>
+          </div>
+        </div>
+        <div class="map-div">
+          <img src="imgs/map.png" class="map-img" alt="Museum Map">
+          <div class="map-room room-1" onclick="popup('kampong')">Kampong Playtime</div>
+          <div class="map-room room-2" onclick="popup('retro')">Retro Rewind</div>
+          <div class="map-room room-3" onclick="popup('digital')">Digital Sandbox</div>
+
+          <div id="popup-kampong" class="popup">
+            <span class="popup-close" onclick="closePopup('kampong')">X</span>
+            <p class="room-header">Kampong Playtime</p>
+            <div class="room-description">Experience the simplicity and warmth of play that shaped our parents&apos; and grandparents&apos; childhoods.</div>
+          </div>
+      
+          <div id="popup-retro" class="popup">
+              <span class="popup-close" onclick="closePopup('retro')">X</span>
+              <p class="room-header">Retro Rewind</p>
+              <div class="room-description">Marvel at the colourful world of toys from the 1970s and 1980s that revolutionised playtime.</div>
+          </div>
+      
+          <div id="popup-digital" class="popup">
+              <span class="popup-close" onclick="closePopup('digital')">X</span>
+              <p class="room-header">Digital Sandbox</p>
+              <div class="room-description">Explore the exciting world of contemporary toys, from digital wonders to modern classics.</div>
+          </div>
+
+          <button class="map-item-button five-stones" data-item="five-stones" data-region="southeast-asia"><img id="five-stones" src="imgs/map/five-stones.png" alt="Five Stones Doodle"></button>
+          <button class="map-item-button gasing" data-item="gasing" data-region="southeast-asia"><img id="gasing" src="imgs/map/gasing.png" alt="Gasing Doodle"></button>
+          <button class="map-item-button chapteh" data-item="chapteh" data-region="southeast-asia"><img src="imgs/map/chapteh.png" alt="Chapteh Doodle"></button>
+          <button class="map-item-button pick-up-sticks" data-item="pick-up-sticks" data-region="china"><img src="imgs/map/pick-up-sticks.png" alt="Pick Up Sticks Doodle"></button>
+          <button class="map-item-button ludo" data-item="ludo" data-region="india"><img src="imgs/map/ludo.png" alt="Ludo Doodle"></button>
+          <button class="map-item-button nerf-guns" data-item="nerf-guns" data-region="america"><img src="imgs/map/nerf-guns.png" alt="Nerf Doodle"></button>
+          <button class="map-item-button sylvanian-families" data-item="sylvanian-families" data-region="japan"><img src="imgs/map/sylvanian-families.png" alt="Sylvanian Families Doodle"></button>
+          <button class="map-item-button tamagotchi" data-item="tamagotchi" data-region="japan"><img src="imgs/map/tamagotchi.png" alt="Tamagotchi Doodle"></button>
+          <button class="map-item-button lego" data-item="lego" data-region="europe"><img src="imgs/map/lego.png" alt="Lego Doodle"></button>
+          <button class="map-item-button pokemon-trading-card-game" data-item="pokemon-trading-card-game" data-region="japan"><img src="imgs/map/pokemon-trading-card-game.png" alt="Pokemon TCG Doodle"></button>
+          <button class="map-item-button game-boy" data-item="game-boy" data-region="japan"><img src="imgs/map/game-boy.png" alt="Game Boy Doodle"></button>
+          <button class="map-item-button pop-mart" data-item="pop-mart" data-region="china"><img src="imgs/map/pop-mart.png" alt="Pop Mart Doodle"></button>
+          <button class="map-item-button minecraft" data-item="minecraft" data-region="america"><img src="imgs/map/minecraft.png" alt="Minecraft Doodle"></button>
+          <button class="map-item-button fortnite" data-item="fortnite" data-region="america"><img src="imgs/map/fortnite.png" alt="Fortnite Doodle"></button>
+          <button class="map-item-button nintendo-switch" data-item="nintendo-switch" data-region="japan"><img src="imgs/map/nintendo-switch.png" alt="Nintendo Switch Doodle"></button>
+        </div>
+      </div>
+      <div><!--comprehension selection-->
+        <label class="comprehension-label" for="comprehension-level">Select Comprehension Level:</label>
+        <select class="comprehension-select" id="comprehension-level">
+          <option value="child-friendly">Child-Friendly</option>
+          <option value="light-reading">Light Reading</option>
+          <option value="in-depth">In-Depth</option>
+        </select>
+      </div>
+      <div id="item-label" class="item-label"></div>
+      <div id="content" class="map-item-content">  
+        <img id="item-image" src="" alt="Item Image" class="map-item-img">
+        <div class="five-stones-content">
+          <p data-level="child-friendly">Five Stones is a game where you throw and catch little bags filled with sand or seeds. You have to be quick and good with your hands to win!</p>
+          <p data-level="light-reading">Five Stones, known locally as "Batu Seremban", is a traditional game played with five small triangular cloth bags filled with sand or seeds. Players toss one bag into the air and attempt to pick up the others before catching the thrown bag. The game requires dexterity, concentration, and quick reflexes.</p>
+          <p data-level="in-depth">Five Stones, or "Batu Seremban" in Malay, is a game with ancient origins, versions of which have been played across Asia for centuries. In Singapore, it gained popularity in the 1950s and 1960s, particularly in kampongs and schools. Traditionally, the game used small pebbles, but evolved to use cloth bags filled with sand, rice, or saga seeds for safety and ease of handling. The game consists of eight stages of increasing difficulty, each requiring specific movements and catches. Five Stones not only provided entertainment but also helped children develop fine motor skills, hand-eye coordination, and strategic thinking. As a game that required minimal equipment and could be played anywhere, it was perfectly suited to Singapore's kampong lifestyle of the time. Despite urbanisation and the influx of modern toys, Five Stones has managed to maintain its place in Singaporean culture, often taught in schools as part of cultural heritage lessons.</p>
+        </div>
+        <div class="gasing-content">
+          <p data-level="child-friendly">Gasing is a fun spinning toy! You wrap a string around it and pull hard to make it spin really fast on the ground. The longer it spins, the more fun it is!</p>
+          <p data-level="light-reading">The gasing, or spinning top, has been a beloved toy in Singapore for generations. Made of wood and often decorated with bright colours, this simple yet captivating toy requires skill to master. Players compete to see whose top can spin the longest or knock over their opponent's top.</p>
+          <p data-level="in-depth">The gasing, a traditional spinning top, has deep roots in Malay culture and has been a staple of play in Singapore since before its independence. Originating from Indonesia and Malaysia, the gasing found its way into Singapore's kampongs in the early 20th century. These tops, typically crafted from hard woods like cengal or pokok kekabu, can weigh up to 5 kg and measure 20 cm in diameter. The art of gasing spinning involves wrapping a rope around the top and launching it with a powerful throw. Competitions, known as 'gasing uri', became popular in the 1960s, where players aimed to keep their tops spinning the longest or attempted to knock over opponents' tops. The gasing represents not just a toy, but a connection to Singapore's rural past and Malay heritage, serving as a testament to the simple yet engaging forms of entertainment that preceded the digital age.</p>
+        </div>
+        <div class="chapteh-content">
+          <p data-level="child-friendly">Chapteh is like playing football, but with a funny feathered ball that you kick up in the air. Try to keep it up as long as you can!</p>
+          <p data-level="light-reading">Chapteh, also known as capteh, is a traditional game played with a weighted shuttlecock. Players use their feet to keep the shuttlecock in the air for as long as possible. It's a game that requires skill, balance, and coordination, often played in groups as a friendly competition.
+          </p>
+          <p data-level="in-depth">Chapteh has its roots in ancient Chinese martial arts training, evolving into a popular game across Southeast Asia. In Singapore, it gained prominence in the 1950s and 1960s, particularly in Chinese communities. The shuttlecock consists of a flat rubber base weighted with coins or metal discs, with feathers attached for stability during flight. Players kick the shuttlecock with the sides of their feet, aiming to keep it airborne for as long as possible. Advanced players could incorporate intricate footwork and even body tricks. Chapteh was not just a game but a social activity that brought communities together, often played in the open spaces of kampongs or school yards. It was valued for improving balance, coordination, and lower body strength. While its popularity waned with urbanisation and the introduction of modern sports, chapteh has seen revivals in schools and community centres as part of efforts to preserve traditional games and promote physical activity among youth.</p>
+        </div>
+        <div class="pick-up-sticks-content">
+          <p data-level="child-friendly">Pick up sticks is a fun game you can play with your friends in Singapore! You drop colorful sticks on a table and try to pick them up one by one without moving the others.</p>
+          <p data-level="light-reading">Pick up sticks is a popular pastime in Singapore. This game of skill and patience involves a set of thin, brightly colored sticks, typically made of plastic or wood. Players take turns carefully removing sticks from a pile without disturbing the others. In Singapore's multicultural environment, you might find children and adults alike enjoying this game in void decks, community centers, or during festive gatherings.</p>
+          <p data-level="in-depth">Pick up sticks, or "huat k'i" in Hokkien, is a traditional game that has found a unique place in Singapore's diverse cultural landscape. This game of dexterity and strategy has roots in ancient China but has been embraced by various communities across the island nation. The game typically consists of 30-50 sticks, each about 15-20 cm long. In Singapore, modern sets often feature bright, tropical colors reflecting the vibrant local aesthetic. The sticks are usually made of plastic, though wooden sets can still be found, especially in heritage shops in areas like Chinatown or Kampong Glam. The rules and scoring system can vary slightly across different parts of Singapore, reflecting the country's diverse influences. Some players assign point values to sticks of different colors, while others focus solely on the number of sticks collected without disturbing the pile.</p>
+        </div>
+        <div class="ludo-content">
+          <p data-level="child-friendly">Ludo is a fun board game where you race your coloured pieces around the board. Roll the dice, move your pieces, and try to get all of them home first! Watch out for other players who might send your pieces back to the start!</p>
+          <p data-level="light-reading">Ludo, a classic board game enjoyed in Singapore and around the world, is a race-based game for two to four players. Each player has four pieces they must move from start to finish based on die rolls. The game combines luck and strategy, as players can send opponents' pieces back to the start, adding an element of competition and excitement to family game nights.</p>
+          <p data-level="in-depth">Ludo, derived from the Indian game Pachisi, has been a staple in Singaporean households since the mid-20th century. This cross-and-circle board game reflects Singapore's multicultural heritage, with roots in ancient India and popularisation through British colonialism. The game's simplicity belies its strategic depth, involving probability assessment, risk management, and opponent psychology. In Singapore, Ludo often features in community centres and schools, promoting intergenerational bonding and cognitive skill development. Its enduring popularity in the digital age speaks to the timeless appeal of tactile, face-to-face gaming experiences in Singaporean culture.</p>
+        </div>
+        <div class="nerf-guns-content">
+          <p data-level="child-friendly">Nerf guns are toy blasters that shoot soft foam darts. They're safe to play with and super fun for having battles with your friends. You can collect different types of Nerf guns that shoot in different ways!</p>
+          <p data-level="light-reading">Nerf guns, introduced by Parker Brothers in the late 1980s, revolutionised toy weaponry with their soft foam ammunition. These blasters quickly became popular in Singapore for their safety and versatility. Nerf products range from simple single-shot blasters to elaborate automatic designs, appealing to a wide age range and encouraging active, imaginative play.</p>
+          <p data-level="in-depth">Nerf (Non-Expanding Recreational Foam) guns, first introduced in 1989, made their way to Singapore in the early 1990s. Their arrival coincided with growing concerns about toy safety and violence in children's play. Nerf guns offered a solution, providing the excitement of projectile toys without the risks associated with harder materials. In Singapore, where space for outdoor play can be limited, Nerf guns became popular for their suitability in both indoor and outdoor settings. The toys aligned well with Singapore's emphasis on active lifestyles and social play. Over the years, Nerf expanded its product line, introducing more complex mechanisms and tie-ins with popular franchises, which resonated with Singapore's tech-savvy youth. Nerf guns have been used in team-building exercises, family bonding activities, and even in some physical education programs in schools. The brand's success in Singapore reflects the country's receptiveness to global toy trends and its ability to adapt them to local play contexts. Today, Nerf continues to be a popular brand in Singapore, with dedicated play arenas and organised events showcasing its enduring appeal across generations.</p>
+        </div>
+        <div class="sylvanian-families-content">
+          <p data-level="child-friendly">Sylvanian Families are tiny animal figures that live in a cute little village. Each animal family has its own house and jobs. You can collect different families and make up stories about their lives in the village.</p>
+          <p data-level="light-reading">Sylvanian Families, created by Japanese company Epoch in 1985, are collectible anthropomorphic animal figurines. These detailed, pastoral-themed toys encourage imaginative play and storytelling. Popular in Singapore since the late 1980s, Sylvanian Families appeal to children with their cute designs and to parents with their wholesome, family-oriented themes.</p>
+          <p data-level="in-depth">Sylvanian Families were introduced to Singapore in the late 1980s, as part of the global expansion of this Japanese toy line. Their arrival coincided with Singapore's economic boom and growing middle class, which had increasing disposable income for toys. The pastoral, idyllic world of Sylvanian Families offered a stark contrast to Singapore's urban landscape, perhaps explaining part of its appeal. The toys' focus on family, community, and traditional professions resonated with Singaporean values. Each Sylvanian family typically consists of a father, mother, and children, reflecting the nuclear family ideal promoted in Singapore. The collectible nature of the toys, with numerous families, buildings, and accessories available, tapped into the collecting culture popular in Singapore. Sylvanian Families also provided a platform for imaginative play and storytelling, aligning with educational goals of fostering creativity. While the brand has seen fluctuations in popularity over the decades, it has maintained a dedicated following in Singapore. Today, Sylvanian Families are often seen as a nostalgic brand for adults who played with them as children, while still attracting new young fans, showcasing its multigenerational appeal in Singapore's toy market.</p>
+        </div>
+        <div class="tamagotchi-content">
+          <p data-level="child-friendly">A Tamagotchi is a tiny pet that lives in a small egg-shaped computer. You have to feed it, clean it, and play with it to keep it happy and healthy. It's like having a pet in your pocket!</p>
+          <p data-level="light-reading">Tamagotchi, the handheld digital pet, took Singapore by storm in the late 1990s. These small egg-shaped devices allowed children to care for a virtual pet, feeding, cleaning, and playing with it. The Tamagotchi craze highlighted the growing integration of technology into children's play.</p>
+          <p data-level="in-depth">Tamagotchi, created by Bandai in 1996, reached Singapore in 1997, coinciding with the nation's push towards becoming a technologically advanced society. This keychain-sized digital pet simulator captured the imagination of children and teenagers, blending the appeal of pet ownership with the novelty of portable electronic devices. The concept resonated in space-constrained Singapore, where many families couldn't keep real pets. Tamagotchi required users to feed, clean, and care for their virtual pet, teaching responsibility and time management. The toy's popularity led to concerns about children's distraction in schools, mirroring global reactions and spurring discussions about technology in education. Tamagotchi's success in Singapore reflected the country's rapid adoption of new technologies and its position as a key market for electronic goods in Southeast Asia. The craze also highlighted changing play patterns, foreshadowing the later dominance of mobile gaming. While the initial fad subsided, Tamagotchi has seen several revivals and remains a nostalgic icon for many Singaporeans who grew up in the late 1990s and early 2000s.</p>
+        </div>
+        <div class="lego-content">
+          <p data-level="child-friendly">LEGO are colourful plastic bricks that you can use to build anything you imagine! You can make houses, cars, spaceships, or even entire cities. The only limit is your creativity!</p>
+          <p data-level="light-reading">LEGO, the iconic building block toy, has been a favourite in Singapore since the 1970s. These interlocking plastic bricks allow children to construct anything from simple structures to complex machines. LEGO's emphasis on creativity and problem-solving aligns well with Singapore's focus on education and innovation.</p>
+          <p data-level="in-depth">LEGO, invented in Denmark in 1949, made its way to Singapore in the late 1960s and gained significant popularity in the 1970s and 1980s. Its arrival coincided with Singapore's rapid development and emphasis on education, particularly in STEM fields. LEGO's open-ended play style, which encourages creativity, spatial reasoning, and problem-solving, resonated with Singaporean parents and educators. The toys' modular nature allowed for endless possibilities, from simple structures to complex machines, appealing to a wide age range. LEGO's success in Singapore was further boosted by themed sets that aligned with popular culture and local interests, such as architecture and robotics. The introduction of LEGO Education products in schools underscored the toy's perceived educational value. LEGO has also been used in Singapore to teach principles of engineering and computer programming. The brand's enduring popularity in Singapore is evident in the LEGOLAND theme park in neighbouring Johor, Malaysia, which attracts many Singaporean visitors. Today, LEGO remains a staple in Singaporean households, toy stores, and educational settings, representing a blend of play and learning that continues to appeal to new generations.</p>
+        </div>
+        <div class="pokemon-trading-card-game-content">
+          <p data-level="child-friendly">Pokémon cards are colorful cards with different Pokémon creatures on them. You can collect them, trade with friends, and use them to play a fun game. Each Pokémon has special powers and abilities!</p>
+          <p data-level="light-reading">The Pokémon Trading Card Game took Singapore by storm in the late 1990s and early 2000s. Based on the popular video game and anime series, these collectible cards featured various Pokémon characters with different abilities. The game combined strategy, collecting, and trading, making it a hit among children and even some adults.</p>
+          <p data-level="in-depth">The Pokémon Trading Card Game (TCG) arrived in Singapore in the late 1990s as part of the global Pokémon phenomenon. Its introduction coincided with Singapore's growing consumer culture and increased exposure to Japanese pop culture. The TCG's success was built on the foundation laid by the Pokémon video games and anime series, which had already gained a strong following in the country. The game's mechanics, which blended strategy, mathematics, and reading comprehension, appealed to both children and parents in education-focused Singapore. Pokémon cards quickly became a playground currency, with rare cards commanding high values and fostering a vibrant trading scene. This led to concerns about gambling-like behaviour among children, prompting some schools to ban the cards. Despite these challenges, the Pokémon TCG remained popular, with official tournaments being held regularly. The cards also served as a gateway to broader discussions about game theory, probability, and collection management. Over the years, Pokémon cards have seen multiple resurgences in popularity, often coinciding with new video game releases or anime seasons. Today, they remain a significant part of Singapore's toy and collectibles market, with some vintage cards becoming valuable investments. The enduring appeal of Pokémon cards in Singapore reflects both the nation's embrace of global pop culture trends and the timeless appeal of collectible-based games.</p>
+        </div>
+        <div class="game-boy-content">
+          <p data-level="child-friendly">The Game Boy is a small computer you can carry around to play games. It has buttons to control the game and a screen to see what's happening. You can play lots of different games on it!</p>
+          <p data-level="light-reading">Nintendo's Game Boy, released in 1989, revolutionised portable gaming. This handheld console allowed players to enjoy video games anywhere, anytime. Its arrival in Singapore marked a significant shift in how children played, introducing digital entertainment to a new generation and paving the way for the mobile gaming era.</p>
+          <p data-level="in-depth">The Nintendo Game Boy, launched globally in 1989, marked a pivotal moment in gaming history, including in Singapore. It arrived in the country in the early 1990s, coinciding with Singapore's growing economy and increasing consumer spending on entertainment. The 8-bit handheld console featured a green-tinted LCD screen and required 4 AA batteries, offering about 10-12 hours of play. Its portability and the ability to switch game cartridges made it immensely popular among Singaporean youth. The device's popularity was boosted by hit games like Tetris and Pokémon, the latter becoming a cultural phenomenon in Singapore in the late 1990s. The Game Boy's success in Singapore reflected the country's rapid technological adoption and its youth's growing engagement with global pop culture. It also foreshadowed Singapore's future as a major market for mobile and digital gaming. The console's impact extended beyond entertainment, influencing social interactions among children and even finding applications in education, as some schools began exploring game-based learning. The Game Boy's legacy in Singapore is evident in the country's current standing as a key player in the Southeast Asian gaming market and its embrace of eSports.</p>
+        </div>
+        <div class="pop-mart-content">
+          <p data-level="child-friendly">Pop Mart sells surprise toys in little boxes. You don't know which toy you'll get until you open it! They have lots of different cute characters to collect, and some are very rare and special.</p>
+          <p data-level="light-reading">Pop Mart, a Chinese company specialising in designer toys and "blind box" collectibles, has gained popularity in Singapore since the late 2010s. Their products, which often feature cute, stylized characters, are sold in opaque packaging, with the specific figurine inside being a surprise. This element of mystery, combined with the collectible nature of the toys, has made Pop Mart a hit among both children and adults.</p>
+          <p data-level="in-depth">Pop Mart, founded in China in 2010, entered the Singapore market in the late 2010s, rapidly gaining popularity. Its success in Singapore reflects the country's position as a key market for Asian pop culture trends and its population's affinity for collectibles. Pop Mart's "blind box" model, where customers purchase a box without knowing which specific figurine is inside, taps into the psychology of surprise and collection that has long been popular in Singapore, from trading cards to gashapon toys. The company's collaborations with artists and designers align with Singapore's growing appreciation for design and its ambitions to be a creative hub. Pop Mart's popularity spans age groups, appealing to children with their cute designs and to adults as designer collectibles, reflecting Singapore's kidult culture where adults engage with traditionally youth-oriented products. The brand has also benefited from Singapore's robust retail sector and its position as a trendsetter in Southeast Asia. However, the random nature of blind box purchases has raised concerns about encouraging gambling-like behaviour, echoing similar discussions about loot boxes in video games. Pop Mart's success has influenced the local toy industry, with several Singaporean companies now producing their own designer toys and blind box collectibles. This trend underscores Singapore's role not just as a consumer of global pop culture, but increasingly as a producer as well.</p>
+        </div>
+        <div class="minecraft-content">
+          <p data-level="child-friendly">Make houses, castles, and even entire worlds in Minecraft. You can even go on adventures, fight monsters, and make friends with animals. In Minecraft, you're the boss of your own blocky world!</p>
+          <p data-level="light-reading">Minecraft is a popular video game that combines creativity, exploration, and survival elements. Players are placed in a 3D world made of blocks, where they can gather resources, craft items, build structures, and interact with various creatures. The game offers different modes, including a peaceful creative mode for unrestricted building and a survival mode with challenges and dangers. Minecraft's simple graphics and open-ended gameplay have made it a global phenomenon, appealing to players of all ages.</p>
+          <p data-level="in-depth">Minecraft, developed by Mojang Studios (formerly Mojang AB), is a sandbox video game that has revolutionized the gaming industry since its initial release in 2011. It presents players with a procedurally generated 3D world composed entirely of blocks, each representing different materials and elements. Key aspects of Minecraft include different gameplay modes: survival, creative, adventure, spectator and even hardcore, and the limitless fun is made possible by its compex world generation from seed to seed. The game creates vast, unique worlds using procedural generation algorithms. These worlds feature diverse biomes, including forests, deserts, mountains, and oceans, each with distinct flora, fauna, and resources. Furthermore, in-game redstone mechanics mimics electrical circuits, allowing players to create complex contraptions, automated systems, and even simple computers within the game world.</p>
+        </div>
+        <div class="fortnite-content">
+          <p data-level="child-friendly">Fortnite is an exciting video game where 100 players land on an island to be the last one standing. You can build forts, find cool weapons, and use funny dances called emotes. It's super fun to play with friends and try to win!</p>
+          <p data-level="light-reading">Fortnite, developed by Epic Games, is a battle royale-style video game that has taken the gaming world by storm. Players are dropped onto an island where they must gather resources, build structures, and battle opponents to be the last person or team standing. Its unique blend of shooting and building mechanics, coupled with regular updates and pop culture crossovers, has made it a global phenomenon, particularly popular among Singaporean youth.</p>
+          <p data-level="in-depth">Fortnite, launched in 2017, represents a significant shift in gaming culture and economics, particularly in Singapore's context. Its free-to-play model, coupled with microtransactions for cosmetic items, aligns with Singapore's digital-savvy, value-conscious consumer base. The game's success in Singapore reflects the nation's high internet penetration rate and the government's push towards a Smart Nation. Fortnite's influence extends beyond gaming, impacting social interactions, digital literacy, and even educational approaches in Singapore. Its regular cultural crossovers serve as a mirror to globalised pop culture consumption patterns in the city-state. The game has also contributed to the growth of eSports in Singapore, aligning with the country's ambitions to become a regional gaming hub.</p>
+        </div>
+        <div class="nintendo-switch-content">
+          <p data-level="child-friendly">The Nintendo Switch is a super cool game console that you can play on your TV or take with you anywhere! It has fun games like Mario and Zelda, and you can even play with your friends using the little controllers called Joy-Cons.</p>
+          <p data-level="light-reading">The Nintendo Switch, released in 2017, is a hybrid video game console that functions both as a home console and a portable device. Its innovative design allows players to seamlessly transition between playing on a TV and on-the-go. With a diverse library of games ranging from family-friendly titles to hardcore experiences, the Switch has become a popular choice for gamers in Singapore, catering to both casual and dedicated players.</p>
+          <p data-level="in-depth">The Nintendo Switch represents a paradigm shift in gaming hardware, particularly resonant in Singapore's urban, fast-paced environment. Its hybrid nature aligns with Singapore's emphasis on efficiency and adaptability, allowing gaming to fit into diverse lifestyles. The Switch's success in Singapore underscores the nation's position as a mature gaming market, with a population that grew up with video games now possessing significant purchasing power. The console's emphasis on local multiplayer gaming resonates with Singapore's communal culture, while its portability suits the country's extensive public transportation network. Furthermore, the Switch's popularity has influenced Singapore's gaming industry, inspiring local developers to create games for the platform and contributing to the growth of gaming events and communities in the city-state. The console's impact extends to education and healthcare sectors in Singapore, with initiatives exploring its potential for gamified learning and rehabilitation programs.</p>
+        </div>
+      </div>
+      <div class="map-items-nav">
+        <button class="map-items-button map-previous">previous</button>
+        <button class="map-items-button map-next">NeXt</button>
+      </div>
+    </main>
+    <script src="scripts/general-script.js"></script>
+    <script src="scripts/map-script.js"></script>
+  </body>
+</html>
