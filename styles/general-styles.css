@@ -1,52 +1,42 @@
+html {
+  overflow-y: scroll;
+}
+
 body {
   font-family: nunito;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0;
-  flex-direction: column;
   margin-bottom:70px;
 }
 
 .page-header{
-  justify-content: center;
   position:fixed;
   top:0px;
   display:flex;
-  background-color: white;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   height:140px;
   width:100%;
   z-index: 100;
 }
 
-.about-page-header{
-  left:8px;
-}
-
-.map-page-header{
-  left:8px;
-}
-
-.disclaimer-page-header{
-  left:8px;
-}
-
-.logo-div{
-  position:fixed;
-  top:25px;
-}
-
 .logo{
   width:80px;
   cursor: pointer;
+  margin-top:20px;
 }
 
 .nav-bar{
-  width:300px;
-  position:fixed;
+  width:70%;
+  max-width:400px;
   display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
-  top: 100px;
+  margin-top: 20px;
 }
 
 .home-button, .map-button, .credits-button, .about-button {
@@ -55,9 +45,6 @@ body {
   background-color: transparent;
   color:#F58058;
   font-size:17px;
-  margin-left:8px;
-  margin-right:8px;
-  margin-bottom: 0px;
   cursor: pointer;
 }
 
