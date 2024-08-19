@@ -371,8 +371,8 @@
   }
 
   .map-div{
-    left:0px;
-    width:400px;
+    left:0;
+    width:100%;
   }
 
   .map-categories{
@@ -381,6 +381,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width:100%;
   }
 
   .origins-regions-shown{
@@ -390,9 +391,15 @@
     justify-content: center;
     align-items: center;
     gap:15px;
-    width:80%;
+    width:100%;
     text-align:center;
+    padding:0 10px;
   }
+
+  .popup {
+    width:80%;
+  }
+}
 
   .popup {
     width:80%;
