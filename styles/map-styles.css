@@ -376,6 +376,7 @@
   }
 
   .map-categories{
+    margin-top:10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -389,6 +390,11 @@
     justify-content: center;
     align-items: center;
     gap:15px;
+    width:80%;
+    text-align:center;
+  }
+
+  .popup {
     width:80%;
   }
 }
