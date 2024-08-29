@@ -5,7 +5,9 @@ const timelineOrder = [
   'pokemon-trading-card-game', 'pop-mart', 'minecraft', 'fortnite', 'nintendo-switch'
 ];
 
-let timelineIndex = 0
+let timelineIndex = 0;
+let selectedRegionItems = []; 
+let regionIndex = 0; 
 
 // Function to save the selected level to localStorage
 function saveComprehensionLevel(level) {
@@ -104,7 +106,7 @@ document.getElementById('comprehension-level').addEventListener('change', functi
   if (navigationMode === 'timeline') {
     currentItem = timelineOrder[timelineIndex]; // Use the current item from the timeline
   } else {
-    currentItem = localStorage.getItem('selectedItem'); // Use the currently selected item
+    currentItem = localStorage.getItem('selectedItem'); // Fallback to the last selected item
   }
 
   if (currentItem) {
@@ -144,9 +146,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const originsRegions = document.getElementById('origins-regions');
   const nextButton = document.querySelector('.map-next');
   const prevButton = document.querySelector('.map-previous');
-
-  let selectedRegionItems = [];
-  let regionIndex = 0;
 
   // Function to update the visibility of Next/Previous buttons
   function updateNavButtons(itemCount) {
@@ -235,8 +234,8 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Region button click handler
-document.querySelectorAll('.region-button').forEach(button => {
-  button.addEventListener('click', function () {
+  document.querySelectorAll('.region-button').forEach(button => {
+    button.addEventListener('click', function () {
       const region = this.getAttribute('data-region');
 
       // Remove 'selected-region' class from all buttons
@@ -264,6 +263,13 @@ document.querySelectorAll('.region-button').forEach(button => {
       // Reset region index
       regionIndex = 0;
 
+      // Save the first item in the selected region as the selected item
+      if (selectedRegionItems.length > 0) {
+        const firstItem = selectedRegionItems[regionIndex];
+        localStorage.setItem('selectedItem', firstItem); // Save the first item
+        updateContent(firstItem, loadComprehensionLevel()); // Update content with the first item
+      }
+
       // Show the first item in the selected region
       if (selectedRegionItems.length > 0) {
           updateContent(selectedRegionItems[regionIndex], loadComprehensionLevel());
@@ -272,6 +278,7 @@ document.querySelectorAll('.region-button').forEach(button => {
       // Update visibility of Next/Previous buttons based on region size
       updateNavButtons(selectedRegionItems.length);
     });
+    
   });
 
   // Restore previous selection
